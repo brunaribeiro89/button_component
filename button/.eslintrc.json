@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "settings": {"react": {
+        "version": "detect"
+    }},
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks",
+        "prettier",
+        "eslint-plugin-import-helpers"
+    ],
+    "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/react-in-js-scope": "off",
+        "import-helpers/order-imports": [
+            "warn",
+            { // example configuration
+            "newlinesBetwee": "always",
+            "groups": [
+                ["/^react/", "/^next/", "/@next/"],
+                    "module",
+                    "/^@shared/",
+                    "/absolute/",
+                    "/components/",
+                    ["parent","sibling", "index"]
+                ],
+                "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+        ]
+    
+    }
+}
